@@ -1,6 +1,7 @@
 import webbrowser as wb
 import os
-import pywhatkit
+import pyautogui
+import time
 
 #opens youtube video
 def openYT():
@@ -8,3 +9,6 @@ def openYT():
 
 def shutDown():
     os.system("Rundll32.exe Powrprof.dll,SetSuspendState Sleep")
+
+def altF4():
+    pyautogui.hotkey('alt', 'f4')

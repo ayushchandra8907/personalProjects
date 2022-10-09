@@ -1,5 +1,7 @@
 import time
 import cv2
+import consequence
+from tkinter import *
 
 #important face stuff (dont delete)
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
@@ -8,21 +10,59 @@ face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 webcam = cv2.VideoCapture()
 webcam.open(0, cv2.CAP_DSHOW)
 
-
-
 faceTimer = 0
 
+#timer for detecting delay
+#seconds = input("Max delay?")
+submit = False
+consequenceChoice = ["Shut down", "YT  Video", " Alt  f4 "]
+idle = 0
 
-while True:
+def submitButtonEnter():
+    global submit
+    global idle
+
+    con = conMenu.get()
+    idle = idleEntry.get()
+
+    print(con)
+    print(idle)
+    submit = True
+
+##CONFIG WINDW==========================================================================================================
+root = Tk()                                                                                                            #
+root.title("Homework Helper - Webcam")                                                                                 #
+root.geometry("220x50")                                                                                               #
+
+#labels
+breakButton = Label(root, text="Max idle time:")
+breakButton.grid(row=0, column=0, sticky=W)
+
+#inputs
+idleEntry = Entry(root)
+idleEntry.grid(row=0, column = 1)
+
+#conseuqnce
+conMenu = StringVar()
+conMenu.set("Shut down")
+conDrop = OptionMenu(root, conMenu, *consequenceChoice)
+conDrop.grid(row=1, column=0)
+
+
+#submitting
+submitButton = Button(root, text="Submit", padx = 40, pady = 3, command=submitButtonEnter)
+submitButton.grid(row = 1, column=1)
+
+root.mainloop()
+
+
+while submit:
 
     #gets teh image and converts it to grayscale
     ret, frame = webcam.read()
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-
     #finds the faces in the frame
     faces = face_cascade.detectMultiScale(gray, 1.1, 4)
-
-
 
     #draws the rectangle around each face
     for (x, y, w, h) in faces:
@@ -30,22 +70,20 @@ while True:
         faceTimer = 0
         print("face found")
 
-
-
-
     #shows the completed image
     cv2.imshow('frame', frame)
+    #delay timer
+    time.sleep(0.0167)
+    faceTimer += 0.0167
 
 
 
-    time.sleep(0.1)
-    faceTimer += 0.1
-
-    if faceTimer > 5:
+    if faceTimer > int(idle)*(5/2.104): # 2.104 is conversion
         print("too long")
 
+
     #ending
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    if cv2.waitKey(1) & 0xFF == ord('/'):
         break
 
 #ending stuff

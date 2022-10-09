@@ -1,6 +1,8 @@
 from tkinter import *
 import win32api
 import consequence
+import cv2
+import time
 
 #main init=============================================================================================================#
 root = Tk()                                                                                                            #
@@ -14,17 +16,27 @@ root.geometry("150x150")                                                        
 def getIdleTime():
     return (win32api.GetTickCount() - win32api.GetLastInputInfo()) / 1000.0
 
+face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
+#important webcam stuff (dont delelte)
+webcam = cv2.VideoCapture()
+webcam.open(0, cv2.CAP_DSHOW)
+
+
+
+faceTimer = 0
 
 #varibles-------------------------
+
+
+
 timePassed = 0
 turnOff = False
 running = False
 
 minutes, seconds = 1, 0
 
-consequenceChoice = ["Shut down", "YT Video"]
-webcamChoice = ["Yes", "No"]
+consequenceChoice = ["Shut down", "YT Video", "Alt f4"]
 
 #classes--------------------------
 class Configurations():
@@ -101,19 +113,24 @@ def runWindow():
         global update_time
         update_time = time_label.after(1000, update)
 
+        #CONSEQUENCE=====
         if (getIdleTime() > config1.getIdle()):
-            #CONSEQUENCE=====
             if config1.getConsequence() == "Shut down":
                 consequence.shutDown()
 
             if config1.getConsequence() == "YT Video":
                 consequence.openYT()
 
+            if config1.getConsequence() == "Alt f4":
+                consequence.altF4()
+
 
             #================
-
             pause()
 
+
+
+        #ending
         if seconds == 0 and minutes == 0:
             pause()
             print("It's been a while, take a break.")
@@ -156,16 +173,15 @@ def configWindow():
     #init====================================================
     config = Toplevel(root)
     config.title("Config")
-    config.geometry("220x100")
+    config.geometry("220x70")
 
     #widgets=================================================
     #labels
     idleButton = Label(config, text="Max Idle Time:")
     breakButton = Label(config, text="Time Until Break:")
-    webcamLabel = Label(config, text="Webcam:")
     idleButton.grid(row=0, column=0, sticky=W)
     breakButton.grid(row=1, column=0, sticky=W)
-    webcamLabel.grid(row=2, column=0, sticky=W)
+
 
     #inputs
     idleEntry = Entry(config)
@@ -176,13 +192,13 @@ def configWindow():
     def submit():
         entryGet = int(finishEntry.get())
 
+        #limits to one hour of work
         if(entryGet > 60):
             entryGet = 60
 
         config1.updateIdle(int(idleEntry.get()))
         config1.updateFinish(int(entryGet)*60)
         config1.updateConsequence(conMenu.get())
-        config1.updateWebcam(camMenu.get())
 
         global minutes
         minutes = entryGet
@@ -190,24 +206,18 @@ def configWindow():
         print(config1.getIdle())
         print(config1.getFinish())
         print(config1.getConsequence())
-        print(config1.getWebcam())
 
 
     #dropdown menu
     conMenu = StringVar()
     conMenu.set("Shut down")
     conDrop = OptionMenu(config, conMenu, *consequenceChoice)
-    conDrop.grid(row=3, column=0)
+    conDrop.grid(row=2, column=0)
 
-    #webcam menu
-    camMenu = StringVar()
-    camMenu.set("Yes")
-    camDrop = OptionMenu(config, camMenu, *webcamChoice)
-    camDrop.grid(row=2, column=1)
 
     #submit
     submitButton = Button(config, text = "Enter", padx = 46, command = submit)
-    submitButton.grid(row = 3, column = 1)
+    submitButton.grid(row = 2, column = 1)
 
 
 #MAIN FRONTEND===================================================================================================================================
