@@ -1,8 +1,5 @@
 from tkinter import *
 import win32api
-import time
-import keyboard
-import webbrowser as wb
 import consequence
 
 #main init=============================================================================================================#
@@ -26,7 +23,7 @@ running = False
 
 minutes, seconds = 1, 0
 
-consequenceChoice = ["Shut down", "YT Video", "SMS Message"]
+consequenceChoice = ["Shut down", "YT Video"]
 webcamChoice = ["Yes", "No"]
 
 #classes--------------------------
@@ -112,8 +109,6 @@ def runWindow():
             if config1.getConsequence() == "YT Video":
                 consequence.openYT()
 
-            if config1.getConsequence() == "SMS Message":
-                consequence.messageWhatsapp()
 
             #================
 

@@ -1,7 +1,5 @@
 import time
-from datetime import datetime
 import cv2
-import consequence
 
 #important face stuff (dont delete)
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
@@ -40,8 +38,8 @@ while True:
 
 
 
-    time.sleep(0.5)
-    faceTimer += 0.5
+    time.sleep(0.1)
+    faceTimer += 0.1
 
     if faceTimer > 5:
         print("too long")
