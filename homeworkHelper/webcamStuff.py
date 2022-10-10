@@ -15,12 +15,25 @@ faceTimer = 0
 #timer for detecting delay
 #seconds = input("Max delay?")
 submit = False
+updateFace = True
+con = ""
 consequenceChoice = ["Shut down", "YT  Video", " Alt  f4 "]
 idle = 0
+
+def enactConsequence():
+    if con == "Shut down":
+        consequence.shutDown()
+
+    if con == "YT  Video":
+        consequence.openYT()
+
+    if con == " Alt  f4 ":
+        consequence.altF4()
 
 def submitButtonEnter():
     global submit
     global idle
+    global con
 
     con = conMenu.get()
     idle = idleEntry.get()
@@ -68,18 +81,33 @@ while submit:
     for (x, y, w, h) in faces:
         cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2)
         faceTimer = 0
-        print("face found")
+        updateFace = True
 
     #shows the completed image
     cv2.imshow('frame', frame)
     #delay timer
-    time.sleep(0.0167)
-    faceTimer += 0.0167
+    time.sleep(0.1)
 
+    if updateFace:
+        faceTimer += 0.1
 
+    print(faceTimer)
 
-    if faceTimer > int(idle)*(5/2.104): # 2.104 is conversion
+    if faceTimer > int(idle):
         print("too long")
+
+        updateFace = False
+        faceTimer = 0
+
+        if con == "Shut down":
+            consequence.shutDown()
+
+        if con == "YT  Video":
+            consequence.openYT()
+
+        if con == " Alt  f4 ":
+            consequence.altF4()
+
 
 
     #ending
