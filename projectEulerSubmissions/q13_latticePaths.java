@@ -1,3 +1,5 @@
+//not finished with the problem yet - I know how to solve, but the numbers are too big so I need to figure that out.
+
 public class q13_latticePaths {
     public static long factorial(int n){
         if(n == 1 || n == 0){
