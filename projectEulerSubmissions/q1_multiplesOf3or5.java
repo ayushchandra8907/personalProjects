@@ -24,8 +24,8 @@ public class q1_multiplesOf3or5 {
         int sum5 = sumFactors(5, 1000); //multiples of 5 from 1-1000
         int sum15 = sumFactors(15, 1000); //multiples of lcm of 3 and 5 from 1-1000
 
-        //since problem asks for multiples of 3 OR 5, numbers that are multiples of both will be excluded.
-        //to calculate this, we just subtract the sum of the lcm of both since they will consistently divide 3 and 5.
+        //since problem asks for multiples of 3 OR 5, numbers that are multiples of both will be calculated twice, due to
+        //lap to calculate this, we just subtract the sum of the lcm of both since they will consistently divide 3 and 5.
 
         int answer = sum3+sum5-sum15;
 

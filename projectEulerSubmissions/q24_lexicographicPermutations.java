@@ -1,66 +1,59 @@
-//not finished with the problem yet
-
+import java.util.ArrayList;
 public class q24_lexicographicPermutations {
     public static int factorial(int n){
-        if(n == 1 || n == 0) {
+        if(n == 0 || n == 1){
             return 1;
         } else {
-            return n*factorial(n-1);
+            return n * factorial(n-1);
         }
     }
 
-    public static void sort(int[] arr){
-        int minDex;
-
-        for(int i = 0; i<arr.length-1; i++){
-            minDex = i;
-            for(int k = i+1; k<arr.length; k++){
-                if(arr[k] < arr[minDex]){
+    //array methods
+    public static void sortArr(ArrayList<Integer> arr, int start){
+        for(int i = start; i<arr.size()-1; i++){
+            int minDex = i;
+            for(int k = i+1; k<arr.size(); k++){
+                if(arr.get(k) < arr.get(minDex)){
                     minDex = k;
                 }
-
-                swap(i, minDex, arr);
+                int temp = arr.get(i);
+                arr.set(i, arr.get(minDex));
+                arr.set(minDex, temp);
             }
         }
     }
 
-    public static void swap(int a, int b, int[] arr){
-        int temp = arr[a];
-        arr[a] = arr[b];
-        arr[b] = temp;
+    public static int locate(ArrayList<Integer> arr, int n, int start){ //choosing to go linear search instead of binary search since I couldn't remeber binary search and this method will only get called 9 times so complexity doesn't matter.
+        for(int i = start; i<arr.size(); i++){
+            if(arr.get(i) == n){
+                return i;
+            }
+        }
+        return -1;
     }
 
-    public static void printPermutation(int[] arr){
-        for(int x:arr){
+    public static void swap(ArrayList<Integer> arr, int a, int b){
+        int temp = arr.get(a);
+        arr.set(a, arr.get(b));
+        arr.set(b, temp);
+    }
+
+    public static void printList(ArrayList<Integer> arr){
+        for(Integer x:arr){
             System.out.print(x + " ");
         }
     }
 
     public static void main(String[] args){
-//        int[] nums = new int[]{0, 1, 2}
-//
-//        int target = 5;
-//        int currentPerm = 1;
-//        int remaining = target-currentPerm;
-//
-//        int pos = 0;
-//        int currSize = nums.length - pos - 1;
-//
-//        while(remaining > 0){
-//            numPerms = factorial(currSize);
-//            int maxFit = remaining/numPerms;
-//
-//            int desiredDig = maxFit;
-//
-//
-//
-//
-//        }
-        int[] nums = new int[]{1, 5, 2, 6, 83, 2, 9};
+        int numToSort = 3;
 
-        sort(nums);
+        ArrayList<Integer> currPerm = new ArrayList<Integer>();
+        for(int i = 0; i<numToSort; i++){
+            currPerm.add(i);
+        }
 
-        printPermutation(nums);
+        
+
+
     }
-
 }
