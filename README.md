@@ -10,6 +10,9 @@ This folder contains many of my submissions to Project Euler. Project Euler is a
 ### USACO Submissions
 This folder has all my USACO practice problems that I did. I am new to USACO and started in early December/late November. However I am pretty interested in this and did quite a bit of problems, and although these are mostly bronze difficulty problems I hope they are able to show my competency in Java.
 
+### Advent of Code Submissions
+This folder has the first 5 days of Advent of Code. Advent of Code is a series of challenges posted in the month of December that have you complete questions with algorithms. I only did the first 5 days of this, and then school and finals started picking up so I didn't have the most time to work on these problems.
+
 # Python
 
 ### Science Assessment 
