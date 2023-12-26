@@ -34,3 +34,7 @@ This was probably the most extensive project I have worked on to date. This proj
 This folder contains some submissions to Project Rosalind. Project Rosalind is similar to Project Euler, but instead of math problems they are biology/more science based problems. I am more comfortable writing these in python because of how easy it is to mutate and modify strings in python. These are also fun to me, but I have more fun doing Project Euler questions. Most of these questions that I did are more simulation based rather than utilzing clever shortcuts to optimize programs.
 
 
+# C++
+
+### 8995V
+This folder has all the code that I've written for my VEX Robotics Team in the 2022-2023 season. Although this repository contains personal projects, I am including this because I was the sole programmer of my team last year and thus all the code in this folder is written by me. Some highlights of the work that I've included here is the use of movement algorithms such as PID, and also more work with GUI's on our robot's brain. This contains the bulk of my C++ knowledge.
