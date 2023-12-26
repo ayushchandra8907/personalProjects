@@ -10,7 +10,7 @@ This folder contains many of my submissions to Project Euler. Project Euler is a
 ### USACO Submissions
 This folder has all my USACO practice problems that I did. I am new to USACO and started in early December/late November. However I am pretty interested in this and did quite a bit of problems, and although these are mostly bronze difficulty problems I hope they are able to show my competency in Java.
 
-# Python - 
+# Python
 
 ### Science Assessment 
 Science Assessment was a program I made a few years prior for a science project that talked about the earth and tectonic plates. The main highlight of this project is the use of python's optimized gui library tkinter. 
@@ -22,7 +22,7 @@ Alarm Clock was a simple program I made to play youtube videos as alarm clocks t
 Auto Zoom was one of my favorite projects. Back during the pandemic era, I struggled to wake up for my zoom classes, so what I did was make a program to join my zoom classes for me so I wouldn't have to wake up, rather I could run the program the night before. This was very ideal and the highlight of this project was the extensive use of python's automation library pyautogui.
 
 ### Discord Bots
-These were many discord bots I coded a long time ago and recently uploaded to github with my friends so that we could have fun in our server
+These were many discord bots I coded a long time ago and recently uploaded to github with my friends so that we could have fun in our server and mess around.
 
 ### Homework Helper
 This was probably the most extensive project I have worked on to date. This project is essentially a pomodoro timer that tracked if you doing work or not. If it sensed that your computer was inactive after a certain amount of time, it would conclude that you were slacking off and not doing work and it would enact a certain consequence. I also added a basic facial recognition feature that tracked if you weren't looking at your screen (in other words probably looking down at a phone or some other distraction). I used tkinter again for the gui and the virtual timer. I also used OpenCV for the camera/facial recognition aspect.
