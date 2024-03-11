@@ -11,6 +11,7 @@ extern motor LFM;
 extern motor LMM;
 extern motor LBM;
 extern motor cata;
+extern digital_out wings;
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.

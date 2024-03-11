@@ -18,6 +18,7 @@
 // LMM                  motor         5               
 // LBM                  motor         6               
 // cata                 motor         7               
+// wings                digital_out   A               
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
 #include "vex.h"
@@ -27,5 +28,13 @@ using namespace vex;
 int main() {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
+
+
+
+  while(true){
+    //drive code
+
+    
+  }
   
 }

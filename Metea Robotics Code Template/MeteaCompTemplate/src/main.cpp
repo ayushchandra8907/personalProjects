@@ -8,6 +8,15 @@
 /*----------------------------------------------------------------------------*/
 
 // ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// RFM                  motor         1               
+// RMM                  motor         2               
+// RBM                  motor         3               
+// LFM                  motor         4               
+// LMM                  motor         5               
+// LBM                  motor         6               
+// cata                 motor         7               
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
 #include "vex.h"
