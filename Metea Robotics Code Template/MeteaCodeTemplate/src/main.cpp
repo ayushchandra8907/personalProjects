@@ -19,11 +19,15 @@
 // LBM                  motor         6               
 // cata                 motor         7               
 // wings                digital_out   A               
+// inertial             inertial      20              
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
 #include "vex.h"
+#include "helpers.h"
 
 using namespace vex;
+
+initializeAll();
 
 int main() {
   // Initializing Robot Configuration. DO NOT REMOVE!

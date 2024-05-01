@@ -17,6 +17,7 @@ motor LMM = motor(PORT5, ratio18_1, true);
 motor LBM = motor(PORT6, ratio18_1, true);
 motor cata = motor(PORT7, ratio18_1, false);
 digital_out wings = digital_out(Brain.ThreeWirePort.A);
+inertial inertial = inertial(PORT20);
 
 // VEXcode generated functions
 // define variable for remote controller enable/disable
