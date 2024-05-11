@@ -1,0 +1,10 @@
+text = "ACSL, or the American Computer Science League, is an international computer science competition among more than 300 schools.  Originally founded in 1978 as the Rhode Island Computer Science League, it then became the New England Computer Science League."
+
+stext = text.split()
+
+newtext = ""
+
+for s in stext:
+    newtext += s + "-"
+
+print(newtext)
