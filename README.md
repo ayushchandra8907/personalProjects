@@ -18,9 +18,6 @@ This folder has the first 5 days of Advent of Code. Advent of Code is a series o
 ### Homework Helper
 This was probably the most extensive project I have worked on to date. This project is essentially a pomodoro timer that tracked if you doing work or not. If it sensed that your computer was inactive after a certain amount of time, it would conclude that you were slacking off and not doing work and it would enact a certain consequence. I also added a basic facial recognition feature that tracked if you weren't looking at your screen (in other words probably looking down at a phone or some other distraction). I used tkinter again for the gui and the virtual timer. I also used OpenCV for the camera/facial recognition aspect.
 
-### Math Trainer
-Our school's math team has come a long way, and to make sure that we can reach our fullest potential and suceed at competitons, I created a program that logs/categorizes all the mistakes we make at competitions. Through this, we can learn from our old mistakes and also recycle problems that we got wrong in the past, so that we avoid making the same mistakes again and set ourselves up for sucess. This is still a major work in progress, and not all of the code is committed publically yet so I can test for bugs.
-
 ### Auto Zoom 
 Auto Zoom was one of my favorite projects. Back during the pandemic era, I struggled to wake up for my zoom classes, so what I did was make a program to join my zoom classes for me so I wouldn't have to wake up, rather I could run the program the night before. This was very ideal and the highlight of this project was the extensive use of python's automation library pyautogui.
 
@@ -36,6 +33,8 @@ These were many discord bots I coded a long time ago and recently uploaded to gi
 ### Project Rosalind Submissions
 This folder contains some submissions to Project Rosalind. Project Rosalind is similar to Project Euler, but instead of math problems they are biology/more science based problems. I am more comfortable writing these in python because of how easy it is to mutate and modify strings in python. These are also fun to me, but I have more fun doing Project Euler questions. Most of these questions that I did are more simulation based rather than utilzing clever shortcuts to optimize programs.
 
+### Math Trainer
+Our school's math team has come a long way, and to make sure that we can reach our fullest potential and suceed at competitons, I created a program that logs/categorizes all the mistakes we make at competitions. Through this, we can learn from our old mistakes and also recycle problems that we got wrong in the past so that we avoid making the same mistakes again and set ourselves up for success. This is still a major work in progress, and not all of the code is committed publically yet so I can test for bugs. ***Note: Right now the code is in the middle of getting moved to a different repo to prepare for the 24-25 math team season.
 
 # C++
 
